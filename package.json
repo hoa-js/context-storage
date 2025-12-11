@@ -1,0 +1,60 @@
+{
+  "name": "@hoajs/context-storage",
+  "version": "0.1.0",
+  "description": "Context storage middleware for Hoa.",
+  "main": "./dist/cjs/context-storage.js",
+  "type": "module",
+  "module": "./dist/esm/context-storage.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/context-storage.js",
+      "require": "./dist/cjs/context-storage.js",
+      "default": "./dist/esm/context-storage.js"
+    }
+  },
+  "files": [
+    "dist",
+    "types",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "build": "tsup",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "prepare": "husky"
+  },
+  "author": "nswbmw",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoa-js/context-storage.git"
+  },
+  "keywords": [
+    "hoa",
+    "middleware",
+    "context-storage",
+    "AsyncLocalStorage",
+    "async_hooks"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "20.2.0",
+    "@commitlint/config-conventional": "20.2.0",
+    "@jest/globals": "30.2.0",
+    "eslint": "9.39.1",
+    "globals": "16.5.0",
+    "hoa": "*",
+    "husky": "9.1.7",
+    "jest": "30.2.0",
+    "neostandard": "0.12.2",
+    "tsup": "8.5.1"
+  },
+  "peerDependencies": {
+    "hoa": "*"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
