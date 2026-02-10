@@ -1,17 +1,17 @@
 {
   "name": "@hoajs/context-storage",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Context storage middleware for Hoa.",
-  "main": "./dist/cjs/context-storage.js",
+  "main": "./dist/cjs/context-storage.cjs",
   "type": "module",
-  "module": "./dist/esm/context-storage.js",
+  "module": "./dist/esm/context-storage.mjs",
   "types": "./types/index.d.ts",
   "exports": {
     ".": {
       "types": "./types/index.d.ts",
-      "import": "./dist/esm/context-storage.js",
-      "require": "./dist/cjs/context-storage.js",
-      "default": "./dist/esm/context-storage.js"
+      "import": "./dist/esm/context-storage.mjs",
+      "require": "./dist/cjs/context-storage.cjs",
+      "default": "./dist/esm/context-storage.mjs"
     }
   },
   "files": [
@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "build": "tsup",
+    "build": "tsdown",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "prepublishOnly": "npm run lint && npm run test && npm run build",
     "prepare": "husky"
@@ -40,16 +40,16 @@
     "async_hooks"
   ],
   "devDependencies": {
-    "@commitlint/cli": "20.2.0",
-    "@commitlint/config-conventional": "20.2.0",
+    "@commitlint/cli": "20.4.1",
+    "@commitlint/config-conventional": "20.4.1",
     "@jest/globals": "30.2.0",
-    "eslint": "9.39.1",
-    "globals": "16.5.0",
+    "eslint": "9.39.2",
+    "globals": "17.3.0",
     "hoa": "*",
     "husky": "9.1.7",
     "jest": "30.2.0",
     "neostandard": "0.12.2",
-    "tsup": "8.5.1"
+    "tsdown": "^0.20.3"
   },
   "peerDependencies": {
     "hoa": "*"
