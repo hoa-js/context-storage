@@ -15,3 +15,7 @@ export function getContext () {
   }
   return context
 }
+
+export function MockContext (ctx, next) {
+  return asyncLocalStorage.run(ctx, next)
+}
